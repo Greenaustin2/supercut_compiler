@@ -24,6 +24,7 @@ for file in "$input_folder"/*.mp4; do
         ffmpeg -i "$file" -c:v libx264 -c:a aac -r 30 -vf "drawtext=text='$(basename "$file")':font='Times New Roman':x=(w-text_w)/2:y=h-th:fontsize=(h/30):fontcolor=Fuchsia:box=1:boxcolor=white@0:boxborderw=0" "$output_file"
 
 
+
         # Record the output file in the temporary file
         echo "file '$output_file'" >> "$temp_file"
     fi
